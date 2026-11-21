@@ -1,0 +1,1298 @@
+{
+  "meta": {
+    "title": "Chronicle",
+    "tagline": "コードが存在する理由を、聴く",
+    "repo": "chronicle",
+    "lang": "ja",
+    "generated": "2026-11-21 13:14 JST",
+    "head": "22188d1",
+    "since": null,
+    "since_label": null,
+    "first_date": "2026-11-21",
+    "last_date": "2026-11-21",
+    "commits": 5,
+    "chapters": 5,
+    "engine": "deterministic",
+    "model": null,
+    "engine_label": "決定論モード（APIキーなし）",
+    "footer": "footer",
+    "sources": {
+      "deterministic": 5
+    },
+    "dropped": 0
+  },
+  "chapters": [
+    {
+      "index": 1,
+      "title": "core: read a git history into a typed timeline",
+      "kind": "other",
+      "scope": null,
+      "lang": "ja",
+      "sentences": [
+        "第1章は2026-11-21から2026-11-21までの1コミットで5ファイル（+449/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ed8d397、最も大きく動いたのは chronicle/core/gitlog.py）。",
+        "唯一のコミット ed8d397「core: read a git history into a typed timeline」が変更を chronicle/core/gitlog.py（+212/-0）に集中させています。"
+      ],
+      "sentences_annotated": [
+        [
+          [
+            "第1章は2026-11-21から2026-11-21までの1コミットで5ファイル（+449/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ",
+            null,
+            null
+          ],
+          [
+            "ed8d397",
+            "sha",
+            "ed8d397"
+          ],
+          [
+            "、最も大きく動いたのは ",
+            null,
+            null
+          ],
+          [
+            "chronicle/core/gitlog.py",
+            "path",
+            "chronicle/core/gitlog.py"
+          ],
+          [
+            "）。",
+            null,
+            null
+          ]
+        ],
+        [
+          [
+            "唯一のコミット ",
+            null,
+            null
+          ],
+          [
+            "ed8d397",
+            "sha",
+            "ed8d397"
+          ],
+          [
+            "「core: read a git history into a typed timeline」が変更を ",
+            null,
+            null
+          ],
+          [
+            "chronicle/core/gitlog.py",
+            "path",
+            "chronicle/core/gitlog.py"
+          ],
+          [
+            "（+212/-0）に集中させています。",
+            null,
+            null
+          ]
+        ]
+      ],
+      "summary": "第1章は2026-11-21から2026-11-21までの1コミットで5ファイル（+449/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ed8d397、最も大きく動いたのは chronicle/core/gitlog.py）。 唯一のコミット ed8d397「core: read a git history into a typed timeline」が変更を chronicle/core/gitlog.py（+212/-0）に集中させています。",
+      "source": "deterministic",
+      "source_label": "決定論フォールバック（diff stat）",
+      "why": "意図は diff からしか読み取れない",
+      "commits": [
+        {
+          "sha": "ed8d3976d46c7591335d38495a6ddf6ae7d364bb",
+          "short": "ed8d397",
+          "author": "maebahesioru",
+          "date": "2026-11-21T12:20:00+09:00",
+          "subject": "core: read a git history into a typed timeline",
+          "body": "Parses git log into commit records (hash, author, date, subject, body,\nfiles, diffstat) so later stages never touch the repository directly.",
+          "ctype": null,
+          "scope": null,
+          "issue_refs": [],
+          "files": [
+            {
+              "path": "chronicle/__init__.py",
+              "added": 8,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/core/__init__.py",
+              "added": 1,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/core/gitlog.py",
+              "added": 212,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/core/model.py",
+              "added": 206,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "pyproject.toml",
+              "added": 22,
+              "deleted": 0,
+              "binary": false
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "chronicle/core/gitlog.py",
+          "added": 212,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/core/model.py",
+          "added": 206,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "pyproject.toml",
+          "added": 22,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/__init__.py",
+          "added": 8,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/core/__init__.py",
+          "added": 1,
+          "deleted": 0,
+          "commits": 1
+        }
+      ],
+      "issues": [],
+      "added": 449,
+      "deleted": 0,
+      "start": "2026-11-21T12:20:00+09:00",
+      "end": "2026-11-21T12:20:00+09:00",
+      "diff": [
+        {
+          "path": "chronicle/core/gitlog.py",
+          "sha": "ed8d397",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/core/gitlog.py b/chronicle/core/gitlog.py",
+            "new file mode 100644",
+            "index 0000000..c26358d",
+            "--- /dev/null",
+            "+++ b/chronicle/core/gitlog.py",
+            "@@ -0,0 +1,212 @@",
+            "+\"\"\"Read a git repository's history with the git CLI only (no third-party deps).\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import os",
+            "+import subprocess",
+            "+from dataclasses import dataclass",
+            "+",
+            "+from .model import Commit, FileChange",
+            "+",
+            "+",
+            "+class GitError(RuntimeError):",
+            "+    \"\"\"Raised when git cannot answer a question about the repository.\"\"\"",
+            "+",
+            "+",
+            "+def _run_git(repo: str, args: list[str], timeout: int = 60) -> str:",
+            "+    env = dict(os.environ)",
+            "+    env.setdefault(\"GIT_OPTIONAL_LOCKS\", \"0\")",
+            "+    env.setdefault(\"LC_ALL\", \"C.UTF-8\")",
+            "+    try:",
+            "+        proc = subprocess.run(",
+            "+            [\"git\", \"-C\", repo, *args],",
+            "+            capture_output=True,",
+            "+            text=True,"
+          ]
+        },
+        {
+          "path": "chronicle/core/model.py",
+          "sha": "ed8d397",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/core/model.py b/chronicle/core/model.py",
+            "new file mode 100644",
+            "index 0000000..6012a72",
+            "--- /dev/null",
+            "+++ b/chronicle/core/model.py",
+            "@@ -0,0 +1,206 @@",
+            "+\"\"\"Dataclasses shared by every stage of the Chronicle pipeline.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import re",
+            "+from dataclasses import dataclass, field",
+            "+",
+            "+CONVENTIONAL_TYPES = (",
+            "+    \"feat\",",
+            "+    \"fix\",",
+            "+    \"docs\",",
+            "+    \"test\",",
+            "+    \"refactor\",",
+            "+    \"perf\",",
+            "+    \"chore\",",
+            "+    \"build\",",
+            "+    \"ci\",",
+            "+    \"style\",",
+            "+    \"revert\",",
+            "+)",
+            "+",
+            "+CONV_RE = re.compile(",
+            "+    r\"^(?P<type>[a-zA-Z]+)(?:\\((?P<scope>[^()]*)\\))?(?P<bang>!)?: (?P<subject>.+)$\"",
+            "+)"
+          ]
+        },
+        {
+          "path": "pyproject.toml",
+          "sha": "ed8d397",
+          "truncated": false,
+          "lines": [
+            "diff --git a/pyproject.toml b/pyproject.toml",
+            "new file mode 100644",
+            "index 0000000..ca48c40",
+            "--- /dev/null",
+            "+++ b/pyproject.toml",
+            "@@ -0,0 +1,22 @@",
+            "+[project]",
+            "+name = \"chronicle-changelog\"",
+            "+version = \"0.1.0\"",
+            "+description = \"Chronicle - hear why your code exists. Cited, narrated changelogs from git history.\"",
+            "+requires-python = \">=3.10\"",
+            "+dependencies = []",
+            "+authors = [{ name = \"maebahesioru\" }]",
+            "+readme = \"README.md\"",
+            "+",
+            "+[project.scripts]",
+            "+chronicle = \"chronicle.cli:main\"",
+            "+",
+            "+[build-system]",
+            "+requires = [\"setuptools>=68\"]",
+            "+build-backend = \"setuptools.build_meta\"",
+            "+",
+            "+[tool.setuptools.packages.find]",
+            "+include = [\"chronicle*\"]",
+            "+",
+            "+[tool.pytest.ini_options]",
+            "+testpaths = [\"tests\"]",
+            "+addopts = \"-q\""
+          ]
+        }
+      ],
+      "audio": "audio/chapter-01.mp3",
+      "audio_engine": "edge-tts:ja-JP-NanamiNeural",
+      "audio_bytes": 300672,
+      "audio_duration": 50.11,
+      "dropped": [],
+      "model": null
+    },
+    {
+      "index": 2,
+      "title": "chapters: cluster commits and enforce the citation contract",
+      "kind": "other",
+      "scope": null,
+      "lang": "ja",
+      "sentences": [
+        "第2章は2026-11-21から2026-11-21までの1コミットで4ファイル（+629/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 629c8fb、最も大きく動いたのは chronicle/core/cite.py）。",
+        "唯一のコミット 629c8fb「chapters: cluster commits and enforce the citation contract」が変更を chronicle/core/cite.py（+298/-0）に集中させています。"
+      ],
+      "sentences_annotated": [
+        [
+          [
+            "第2章は2026-11-21から2026-11-21までの1コミットで4ファイル（+629/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ",
+            null,
+            null
+          ],
+          [
+            "629c8fb",
+            "sha",
+            "629c8fb"
+          ],
+          [
+            "、最も大きく動いたのは ",
+            null,
+            null
+          ],
+          [
+            "chronicle/core/cite.py",
+            "path",
+            "chronicle/core/cite.py"
+          ],
+          [
+            "）。",
+            null,
+            null
+          ]
+        ],
+        [
+          [
+            "唯一のコミット ",
+            null,
+            null
+          ],
+          [
+            "629c8fb",
+            "sha",
+            "629c8fb"
+          ],
+          [
+            "「chapters: cluster commits and enforce the citation contract」が変更を ",
+            null,
+            null
+          ],
+          [
+            "chronicle/core/cite.py",
+            "path",
+            "chronicle/core/cite.py"
+          ],
+          [
+            "（+298/-0）に集中させています。",
+            null,
+            null
+          ]
+        ]
+      ],
+      "summary": "第2章は2026-11-21から2026-11-21までの1コミットで4ファイル（+629/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 629c8fb、最も大きく動いたのは chronicle/core/cite.py）。 唯一のコミット 629c8fb「chapters: cluster commits and enforce the citation contract」が変更を chronicle/core/cite.py（+298/-0）に集中させています。",
+      "source": "deterministic",
+      "source_label": "決定論フォールバック（diff stat）",
+      "why": "意図は diff からしか読み取れない",
+      "commits": [
+        {
+          "sha": "629c8fb0e104957a8523a57596316d1267426d83",
+          "short": "629c8fb",
+          "author": "maebahesioru",
+          "date": "2026-11-21T12:31:00+09:00",
+          "subject": "chapters: cluster commits and enforce the citation contract",
+          "body": "Related commits are grouped into chapters by path and time proximity; every\nsentence later spoken must carry a commit citation, checked by core/cite.py.",
+          "ctype": null,
+          "scope": null,
+          "issue_refs": [],
+          "files": [
+            {
+              "path": "chronicle/core/cite.py",
+              "added": 298,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/core/cluster.py",
+              "added": 122,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "tests/test_cite.py",
+              "added": 132,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "tests/test_cluster.py",
+              "added": 77,
+              "deleted": 0,
+              "binary": false
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "chronicle/core/cite.py",
+          "added": 298,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "tests/test_cite.py",
+          "added": 132,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/core/cluster.py",
+          "added": 122,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "tests/test_cluster.py",
+          "added": 77,
+          "deleted": 0,
+          "commits": 1
+        }
+      ],
+      "issues": [],
+      "added": 629,
+      "deleted": 0,
+      "start": "2026-11-21T12:31:00+09:00",
+      "end": "2026-11-21T12:31:00+09:00",
+      "diff": [
+        {
+          "path": "chronicle/core/cite.py",
+          "sha": "629c8fb",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/core/cite.py b/chronicle/core/cite.py",
+            "new file mode 100644",
+            "index 0000000..d5b203c",
+            "--- /dev/null",
+            "+++ b/chronicle/core/cite.py",
+            "@@ -0,0 +1,298 @@",
+            "+\"\"\"The citation contract.",
+            "+",
+            "+Chronicle refuses to publish a sentence that cannot be traced back to the",
+            "+repository. A sentence is valid when it contains at least one citation that",
+            "+points at real evidence from its chapter:",
+            "+",
+            "+  * a commit SHA (7 to 40 hex characters, at least one letter and one digit),",
+            "+  * a file path that the chapter actually touched,",
+            "+  * an issue number (#123) that appears in the chapter's commit messages.",
+            "+",
+            "+Citations that merely look valid but are absent from the evidence are",
+            "+treated as errors, not as decoration. That is what keeps the narrated",
+            "+summary honest: a hallucinated SHA loses the whole sentence.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import re",
+            "+from dataclasses import dataclass, field",
+            "+",
+            "+SHA_RE = re.compile(r\"(?<![0-9a-zA-Z])[0-9a-fA-F]{7,40}(?![0-9a-zA-Z])\")",
+            "+PATH_RE = re.compile(",
+            "+    r\"(?<![\\w/.\\-])((?:[\\w.\\-]+/)*[\\w.\\-]+\\.[A-Za-z][A-Za-z0-9]{0,7})(?![\\w/\\-])\"",
+            "+)"
+          ]
+        },
+        {
+          "path": "tests/test_cite.py",
+          "sha": "629c8fb",
+          "truncated": true,
+          "lines": [
+            "diff --git a/tests/test_cite.py b/tests/test_cite.py",
+            "new file mode 100644",
+            "index 0000000..d13cb2e",
+            "--- /dev/null",
+            "+++ b/tests/test_cite.py",
+            "@@ -0,0 +1,132 @@",
+            "+\"\"\"The citation contract: no citation, no sentence.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import pytest",
+            "+",
+            "+from chronicle.core.cite import (",
+            "+    Enforcement,",
+            "+    Evidence,",
+            "+    enforce,",
+            "+    find_citations,",
+            "+    inspect_sentence,",
+            "+    split_sentences,",
+            "+    validate_sentence,",
+            "+)",
+            "+from chronicle.core.model import Chapter, Commit",
+            "+",
+            "+",
+            "+EVIDENCE = Evidence(",
+            "+    shas=[\"a1b2c3d4e5f60718293a4b5c6d7e8f9012345678\"],",
+            "+    paths=[\"src/core/parser.py\", \"docs/guide.md\"],",
+            "+    issues=[\"42\"],",
+            "+)",
+            "+"
+          ]
+        },
+        {
+          "path": "chronicle/core/cluster.py",
+          "sha": "629c8fb",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/core/cluster.py b/chronicle/core/cluster.py",
+            "new file mode 100644",
+            "index 0000000..6e059ec",
+            "--- /dev/null",
+            "+++ b/chronicle/core/cluster.py",
+            "@@ -0,0 +1,122 @@",
+            "+\"\"\"Turn a flat commit list into chronological chapters.",
+            "+",
+            "+Two signals decide the grouping, in this order:",
+            "+",
+            "+1. Conventional commit type (and scope, when present). Every feat commit",
+            "+   belongs to the feat chapter, every fix to the fix chapter, and so on.",
+            "+2. File-set similarity for commits that do not follow the convention. A",
+            "+   commit joins the earliest earlier cluster whose path set overlaps enough",
+            "+   (Jaccard) and starts a new cluster otherwise.",
+            "+",
+            "+The pass is deterministic: input order is the git log order (oldest first)",
+            "+and every tie is broken by first appearance, never by hashing.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+from dataclasses import dataclass, field",
+            "+",
+            "+from .model import Chapter, Commit",
+            "+",
+            "+DEFAULT_SIMILARITY = 0.34",
+            "+DEFAULT_MAX_COMMITS = 8",
+            "+",
+            "+"
+          ]
+        }
+      ],
+      "audio": "audio/chapter-02.mp3",
+      "audio_engine": "edge-tts:ja-JP-NanamiNeural",
+      "audio_bytes": 305856,
+      "audio_duration": 50.98,
+      "dropped": [],
+      "model": null
+    },
+    {
+      "index": 3,
+      "title": "cli: chronicle build --repo PATH [--since TAG] [--out DIR] [--lang ja|en]",
+      "kind": "other",
+      "scope": null,
+      "lang": "ja",
+      "sentences": [
+        "第3章は2026-11-21から2026-11-21までの1コミットで3ファイル（+457/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は efabb20、最も大きく動いたのは chronicle/build.py）。",
+        "唯一のコミット efabb20「cli: chronicle build --repo PATH [--since TAG] [--out DIR] [--lang ja|en]」が変更を chronicle/build.py（+320/-0）に集中させています。"
+      ],
+      "sentences_annotated": [
+        [
+          [
+            "第3章は2026-11-21から2026-11-21までの1コミットで3ファイル（+457/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ",
+            null,
+            null
+          ],
+          [
+            "efabb20",
+            "sha",
+            "efabb20"
+          ],
+          [
+            "、最も大きく動いたのは ",
+            null,
+            null
+          ],
+          [
+            "chronicle/build.py",
+            "path",
+            "chronicle/build.py"
+          ],
+          [
+            "）。",
+            null,
+            null
+          ]
+        ],
+        [
+          [
+            "唯一のコミット ",
+            null,
+            null
+          ],
+          [
+            "efabb20",
+            "sha",
+            "efabb20"
+          ],
+          [
+            "「cli: chronicle build --repo PATH [--since TAG] [--out DIR] [--lang ja|en]」が変更を ",
+            null,
+            null
+          ],
+          [
+            "chronicle/build.py",
+            "path",
+            "chronicle/build.py"
+          ],
+          [
+            "（+320/-0）に集中させています。",
+            null,
+            null
+          ]
+        ]
+      ],
+      "summary": "第3章は2026-11-21から2026-11-21までの1コミットで3ファイル（+457/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は efabb20、最も大きく動いたのは chronicle/build.py）。 唯一のコミット efabb20「cli: chronicle build --repo PATH [--since TAG] [--out DIR] [--lang ja|en]」が変更を chronicle/build.py（+320/-0）に集中させています。",
+      "source": "deterministic",
+      "source_label": "決定論フォールバック（diff stat）",
+      "why": "意図は diff からしか読み取れない",
+      "commits": [
+        {
+          "sha": "efabb20aa643c90e6a7ed22107b4f5c1cf5afc11",
+          "short": "efabb20",
+          "author": "maebahesioru",
+          "date": "2026-11-21T12:42:00+09:00",
+          "subject": "cli: chronicle build --repo PATH [--since TAG] [--out DIR] [--lang ja|en]",
+          "body": "",
+          "ctype": null,
+          "scope": null,
+          "issue_refs": [],
+          "files": [
+            {
+              "path": "chronicle/__main__.py",
+              "added": 6,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/build.py",
+              "added": 320,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/cli.py",
+              "added": 131,
+              "deleted": 0,
+              "binary": false
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "chronicle/build.py",
+          "added": 320,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/cli.py",
+          "added": 131,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/__main__.py",
+          "added": 6,
+          "deleted": 0,
+          "commits": 1
+        }
+      ],
+      "issues": [],
+      "added": 457,
+      "deleted": 0,
+      "start": "2026-11-21T12:42:00+09:00",
+      "end": "2026-11-21T12:42:00+09:00",
+      "diff": [
+        {
+          "path": "chronicle/build.py",
+          "sha": "efabb20",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/build.py b/chronicle/build.py",
+            "new file mode 100644",
+            "index 0000000..0eec396",
+            "--- /dev/null",
+            "+++ b/chronicle/build.py",
+            "@@ -0,0 +1,320 @@",
+            "+\"\"\"The build pipeline: git log -> chapters -> summaries -> audio -> folder.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import os",
+            "+import time",
+            "+from dataclasses import dataclass, field",
+            "+from datetime import datetime, timezone",
+            "+",
+            "+from .audio import narrate",
+            "+from .core.cite import annotate",
+            "+from .core.cluster import DEFAULT_MAX_COMMITS, DEFAULT_SIMILARITY, build_chapters",
+            "+from .core.gitlog import GitError, diff_excerpt, head_sha, is_git_repo, read_commits, repo_name, resolve_since",
+            "+from .html import write_site",
+            "+from .i18n import kind_rationale, normalize_lang, source_label, t",
+            "+from .llm import config_from_env, make_client",
+            "+from .summarize import summarize_chapters",
+            "+",
+            "+# The whole build must stay well inside 120 seconds, audio included.",
+            "+TIME_BUDGET_S = 100.0",
+            "+AUDIO_BUDGET_S = 70.0",
+            "+",
+            "+",
+            "+class BuildError(RuntimeError):"
+          ]
+        },
+        {
+          "path": "chronicle/cli.py",
+          "sha": "efabb20",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/cli.py b/chronicle/cli.py",
+            "new file mode 100644",
+            "index 0000000..73cbd72",
+            "--- /dev/null",
+            "+++ b/chronicle/cli.py",
+            "@@ -0,0 +1,131 @@",
+            "+\"\"\"Command line entry point for Chronicle.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import argparse",
+            "+import json",
+            "+import os",
+            "+import shutil",
+            "+import sys",
+            "+",
+            "+from . import __version__",
+            "+from .build import BuildError, BuildOptions, build",
+            "+from .core.cluster import DEFAULT_MAX_COMMITS, DEFAULT_SIMILARITY",
+            "+from .i18n import LANGS, normalize_lang",
+            "+",
+            "+",
+            "+def build_parser() -> argparse.ArgumentParser:",
+            "+    parser = argparse.ArgumentParser(",
+            "+        prog=\"chronicle\",",
+            "+        description=\"Chronicle - hear why your code exists. Turns a git history into narrated, cited chapters.\",",
+            "+    )",
+            "+    parser.add_argument(\"--version\", action=\"version\", version=\"chronicle \" + __version__)",
+            "+    sub = parser.add_subparsers(dest=\"command\")",
+            "+"
+          ]
+        },
+        {
+          "path": "chronicle/__main__.py",
+          "sha": "efabb20",
+          "truncated": false,
+          "lines": [
+            "diff --git a/chronicle/__main__.py b/chronicle/__main__.py",
+            "new file mode 100644",
+            "index 0000000..dbdd066",
+            "--- /dev/null",
+            "+++ b/chronicle/__main__.py",
+            "@@ -0,0 +1,6 @@",
+            "+import sys",
+            "+",
+            "+from .cli import main",
+            "+",
+            "+if __name__ == \"__main__\":",
+            "+    sys.exit(main())"
+          ]
+        }
+      ],
+      "audio": "audio/chapter-03.mp3",
+      "audio_engine": "edge-tts:ja-JP-NanamiNeural",
+      "audio_bytes": 294480,
+      "audio_duration": 49.08,
+      "dropped": [],
+      "model": null
+    },
+    {
+      "index": 4,
+      "title": "summaries: deterministic fallback plus any OpenAI-compatible endpoint",
+      "kind": "other",
+      "scope": null,
+      "lang": "ja",
+      "sentences": [
+        "第4章は2026-11-21から2026-11-21までの1コミットで3ファイル（+647/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 7616734、最も大きく動いたのは chronicle/summarize.py）。",
+        "唯一のコミット 7616734「summaries: deterministic fallback plus any OpenAI-compatible endpoint」が変更を chronicle/summarize.py（+350/-0）に集中させています。"
+      ],
+      "sentences_annotated": [
+        [
+          [
+            "第4章は2026-11-21から2026-11-21までの1コミットで3ファイル（+647/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 7616734、最も大きく動いたのは ",
+            null,
+            null
+          ],
+          [
+            "chronicle/summarize.py",
+            "path",
+            "chronicle/summarize.py"
+          ],
+          [
+            "）。",
+            null,
+            null
+          ]
+        ],
+        [
+          [
+            "唯一のコミット 7616734「summaries: deterministic fallback plus any OpenAI-compatible endpoint」が変更を ",
+            null,
+            null
+          ],
+          [
+            "chronicle/summarize.py",
+            "path",
+            "chronicle/summarize.py"
+          ],
+          [
+            "（+350/-0）に集中させています。",
+            null,
+            null
+          ]
+        ]
+      ],
+      "summary": "第4章は2026-11-21から2026-11-21までの1コミットで3ファイル（+647/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 7616734、最も大きく動いたのは chronicle/summarize.py）。 唯一のコミット 7616734「summaries: deterministic fallback plus any OpenAI-compatible endpoint」が変更を chronicle/summarize.py（+350/-0）に集中させています。",
+      "source": "deterministic",
+      "source_label": "決定論フォールバック（diff stat）",
+      "why": "意図は diff からしか読み取れない",
+      "commits": [
+        {
+          "sha": "761673451a80fb26b0859a419186f4786a56a3fa",
+          "short": "7616734",
+          "author": "maebahesioru",
+          "date": "2026-11-21T12:52:00+09:00",
+          "subject": "summaries: deterministic fallback plus any OpenAI-compatible endpoint",
+          "body": "With CHRONICLE_LLM=openai-compat and OPENAI_BASE_URL/OPENAI_API_KEY the\nnarration is model-written; without it the tour is fully deterministic so a\ndemo never depends on the network.",
+          "ctype": null,
+          "scope": null,
+          "issue_refs": [],
+          "files": [
+            {
+              "path": "chronicle/i18n.py",
+              "added": 171,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/llm.py",
+              "added": 126,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/summarize.py",
+              "added": 350,
+              "deleted": 0,
+              "binary": false
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "chronicle/summarize.py",
+          "added": 350,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/i18n.py",
+          "added": 171,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/llm.py",
+          "added": 126,
+          "deleted": 0,
+          "commits": 1
+        }
+      ],
+      "issues": [],
+      "added": 647,
+      "deleted": 0,
+      "start": "2026-11-21T12:52:00+09:00",
+      "end": "2026-11-21T12:52:00+09:00",
+      "diff": [
+        {
+          "path": "chronicle/summarize.py",
+          "sha": "7616734",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/summarize.py b/chronicle/summarize.py",
+            "new file mode 100644",
+            "index 0000000..40fb6f7",
+            "--- /dev/null",
+            "+++ b/chronicle/summarize.py",
+            "@@ -0,0 +1,350 @@",
+            "+\"\"\"Chapter narration with the citation contract wrapped around every backend.",
+            "+",
+            "+Two summary engines exist:",
+            "+",
+            "+* deterministic: built from the diff stat and commit metadata. It needs no",
+            "+  network, no API key and no model, and it is always available.",
+            "+* openai-compat: any chat-completions endpoint. Its prose is fed through the",
+            "+  same validator, and every rejected sentence is either repaired once or",
+            "+  replaced by the deterministic text.",
+            "+",
+            "+The deterministic engine writes sentences that cite a SHA and a path on",
+            "+purpose: the fallback must obey the contract too, otherwise the contract is",
+            "+just decoration.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import time",
+            "+from dataclasses import dataclass, field",
+            "+",
+            "+from .core.cite import Evidence, Enforcement, enforce, find_citations, split_sentences, validate_sentence",
+            "+from .core.model import Chapter",
+            "+from .i18n import kind_label, kind_rationale, normalize_lang",
+            "+from .llm import LLMError"
+          ]
+        },
+        {
+          "path": "chronicle/i18n.py",
+          "sha": "7616734",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/i18n.py b/chronicle/i18n.py",
+            "new file mode 100644",
+            "index 0000000..9c03df4",
+            "--- /dev/null",
+            "+++ b/chronicle/i18n.py",
+            "@@ -0,0 +1,171 @@",
+            "+\"\"\"English and Japanese strings used by the narrator and the HTML player.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+LANGS = (\"ja\", \"en\")",
+            "+",
+            "+KIND_LABEL = {",
+            "+    \"en\": {",
+            "+        \"feat\": \"feature\",",
+            "+        \"fix\": \"bug fix\",",
+            "+        \"docs\": \"documentation\",",
+            "+        \"test\": \"tests\",",
+            "+        \"refactor\": \"refactor\",",
+            "+        \"perf\": \"performance\",",
+            "+        \"chore\": \"maintenance\",",
+            "+        \"build\": \"build\",",
+            "+        \"ci\": \"CI\",",
+            "+        \"style\": \"formatting\",",
+            "+        \"revert\": \"revert\",",
+            "+        \"other\": \"work\",",
+            "+    },",
+            "+    \"ja\": {",
+            "+        \"feat\": \"新機能\",",
+            "+        \"fix\": \"不具合修正\","
+          ]
+        },
+        {
+          "path": "chronicle/llm.py",
+          "sha": "7616734",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/llm.py b/chronicle/llm.py",
+            "new file mode 100644",
+            "index 0000000..5035599",
+            "--- /dev/null",
+            "+++ b/chronicle/llm.py",
+            "@@ -0,0 +1,126 @@",
+            "+\"\"\"Pluggable language-model backend for the chapter summaries.",
+            "+",
+            "+The default backend does not exist: Chronicle runs to completion with zero",
+            "+network access. Setting CHRONICLE_LLM=openai-compat (or just providing",
+            "+OPENAI_API_KEY) switches to any OpenAI-compatible chat-completions endpoint,",
+            "+including a local relay such as http://127.0.0.1:8795/v1.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import json",
+            "+import os",
+            "+import urllib.error",
+            "+import urllib.request",
+            "+from dataclasses import dataclass",
+            "+",
+            "+DEFAULT_BASE_URL = \"http://127.0.0.1:8795/v1\"",
+            "+DEFAULT_MODEL = \"gpt-4o-mini\"",
+            "+",
+            "+",
+            "+class LLMError(RuntimeError):",
+            "+    \"\"\"Raised when the configured backend cannot answer.\"\"\"",
+            "+",
+            "+"
+          ]
+        }
+      ],
+      "audio": "audio/chapter-04.mp3",
+      "audio_engine": "edge-tts:ja-JP-NanamiNeural",
+      "audio_bytes": 332784,
+      "audio_duration": 55.46,
+      "dropped": [],
+      "model": null
+    },
+    {
+      "index": 5,
+      "title": "player: offline HTML tour with narrated audio",
+      "kind": "other",
+      "scope": null,
+      "lang": "ja",
+      "sentences": [
+        "第5章は2026-11-21から2026-11-21までの1コミットで6ファイル（+947/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 22188d1、最も大きく動いたのは chronicle/html.py）。",
+        "唯一のコミット 22188d1「player: offline HTML tour with narrated audio」が変更を chronicle/html.py（+526/-0）に集中させています。"
+      ],
+      "sentences_annotated": [
+        [
+          [
+            "第5章は2026-11-21から2026-11-21までの1コミットで6ファイル（+947/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は ",
+            null,
+            null
+          ],
+          [
+            "22188d1",
+            "sha",
+            "22188d1"
+          ],
+          [
+            "、最も大きく動いたのは ",
+            null,
+            null
+          ],
+          [
+            "chronicle/html.py",
+            "path",
+            "chronicle/html.py"
+          ],
+          [
+            "）。",
+            null,
+            null
+          ]
+        ],
+        [
+          [
+            "唯一のコミット ",
+            null,
+            null
+          ],
+          [
+            "22188d1",
+            "sha",
+            "22188d1"
+          ],
+          [
+            "「player: offline HTML tour with narrated audio」が変更を ",
+            null,
+            null
+          ],
+          [
+            "chronicle/html.py",
+            "path",
+            "chronicle/html.py"
+          ],
+          [
+            "（+526/-0）に集中させています。",
+            null,
+            null
+          ]
+        ]
+      ],
+      "summary": "第5章は2026-11-21から2026-11-21までの1コミットで6ファイル（+947/-0）を変更し、中心にある意図は作業、つまり意図は diff からしか読み取れないです（起点は 22188d1、最も大きく動いたのは chronicle/html.py）。 唯一のコミット 22188d1「player: offline HTML tour with narrated audio」が変更を chronicle/html.py（+526/-0）に集中させています。",
+      "source": "deterministic",
+      "source_label": "決定論フォールバック（diff stat）",
+      "why": "意図は diff からしか読み取れない",
+      "commits": [
+        {
+          "sha": "22188d1ed7a0fea5cb4d1a77df133984181aea76",
+          "short": "22188d1",
+          "author": "maebahesioru",
+          "date": "2026-11-21T13:00:00+09:00",
+          "subject": "player: offline HTML tour with narrated audio",
+          "body": "Self-contained HTML (no CDN, no external requests) with a chapter list,\nplay-all, and per-sentence citations; edge-tts narration is content-hashed\nand cached, and a silent timing map is kept when audio is unavailable.",
+          "ctype": null,
+          "scope": null,
+          "issue_refs": [],
+          "files": [
+            {
+              "path": ".gitignore",
+              "added": 8,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/audio.py",
+              "added": 170,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "chronicle/html.py",
+              "added": 526,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "tests/conftest.py",
+              "added": 88,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "tests/test_build.py",
+              "added": 106,
+              "deleted": 0,
+              "binary": false
+            },
+            {
+              "path": "tests/test_gitlog.py",
+              "added": 49,
+              "deleted": 0,
+              "binary": false
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "chronicle/html.py",
+          "added": 526,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "chronicle/audio.py",
+          "added": 170,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "tests/test_build.py",
+          "added": 106,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "tests/conftest.py",
+          "added": 88,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": "tests/test_gitlog.py",
+          "added": 49,
+          "deleted": 0,
+          "commits": 1
+        },
+        {
+          "path": ".gitignore",
+          "added": 8,
+          "deleted": 0,
+          "commits": 1
+        }
+      ],
+      "issues": [],
+      "added": 947,
+      "deleted": 0,
+      "start": "2026-11-21T13:00:00+09:00",
+      "end": "2026-11-21T13:00:00+09:00",
+      "diff": [
+        {
+          "path": "chronicle/html.py",
+          "sha": "22188d1",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/html.py b/chronicle/html.py",
+            "new file mode 100644",
+            "index 0000000..94bb32f",
+            "--- /dev/null",
+            "+++ b/chronicle/html.py",
+            "@@ -0,0 +1,526 @@",
+            "+\"\"\"One-folder player: index.html with inline CSS and JS, relative audio only.",
+            "+",
+            "+The build is deliberately network-free. Every byte the page needs ships in",
+            "+the folder: styles, script, chapter data, and the narration files. Commit",
+            "+messages that happen to contain a URL are defanged (a zero-width space after",
+            "+the scheme colon) so a release folder contains no fetchable external",
+            "+reference at all.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import json",
+            "+import os",
+            "+from html import escape",
+            "+",
+            "+from .i18n import t",
+            "+",
+            "+ZWSP = chr(8203)",
+            "+",
+            "+",
+            "+def _defang(text: str) -> str:",
+            "+    text = str(text)",
+            "+    text = text.replace(\"https://\", \"https:\" + ZWSP + \"//\")",
+            "+    text = text.replace(\"http://\", \"http:\" + ZWSP + \"//\")"
+          ]
+        },
+        {
+          "path": "chronicle/audio.py",
+          "sha": "22188d1",
+          "truncated": true,
+          "lines": [
+            "diff --git a/chronicle/audio.py b/chronicle/audio.py",
+            "new file mode 100644",
+            "index 0000000..2c7caa5",
+            "--- /dev/null",
+            "+++ b/chronicle/audio.py",
+            "@@ -0,0 +1,170 @@",
+            "+\"\"\"Narration: chapter summaries to MP3 via edge-tts, with a silent fallback.",
+            "+",
+            "+edge-tts talks to Microsoft's public speech endpoint. It is optional on",
+            "+purpose: when it is missing, offline, or rate limited, Chronicle still writes",
+            "+a complete player. The fallback is REAL silence (a valid audio file of the",
+            "+expected length), not a broken reference, so the offline folder never points",
+            "+at a missing asset.",
+            "+\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+import importlib.util",
+            "+import os",
+            "+import shutil",
+            "+import subprocess",
+            "+import sys",
+            "+import wave",
+            "+from dataclasses import dataclass",
+            "+",
+            "+VOICES = {",
+            "+    \"ja\": os.environ.get(\"CHRONICLE_VOICE_JA\", \"ja-JP-NanamiNeural\"),",
+            "+    \"en\": os.environ.get(\"CHRONICLE_VOICE_EN\", \"en-US-AriaNeural\"),",
+            "+}",
+            "+"
+          ]
+        },
+        {
+          "path": "tests/test_build.py",
+          "sha": "22188d1",
+          "truncated": true,
+          "lines": [
+            "diff --git a/tests/test_build.py b/tests/test_build.py",
+            "new file mode 100644",
+            "index 0000000..3489356",
+            "--- /dev/null",
+            "+++ b/tests/test_build.py",
+            "@@ -0,0 +1,106 @@",
+            "+\"\"\"End-to-end builds: self-contained HTML, --since, and the contract in anger.\"\"\"",
+            "+",
+            "+from __future__ import annotations",
+            "+",
+            "+from chronicle.build import BuildOptions, build",
+            "+from chronicle.core.cite import Evidence, validate_sentence",
+            "+from chronicle.summarize import evidence_for",
+            "+",
+            "+",
+            "+def chapter_evidence(item: dict) -> Evidence:",
+            "+    return Evidence(",
+            "+        shas=[commit[\"sha\"] for commit in item[\"commits\"]],",
+            "+        paths=[entry[\"path\"] for entry in item[\"files\"]],",
+            "+        issues=[str(issue) for issue in item[\"issues\"]],",
+            "+    )",
+            "+",
+            "+",
+            "+def test_build_writes_a_self_contained_player(sample_repo, tmp_path):",
+            "+    out = tmp_path / \"site\"",
+            "+    report = build(",
+            "+        BuildOptions(repo=str(sample_repo), out=str(out), lang=\"en\", audio=False, llm=False)",
+            "+    )",
+            "+    html = (out / \"index.html\").read_text(encoding=\"utf-8\")",
+            "+"
+          ]
+        }
+      ],
+      "audio": "audio/chapter-05.mp3",
+      "audio_engine": "edge-tts:ja-JP-NanamiNeural",
+      "audio_bytes": 295344,
+      "audio_duration": 49.22,
+      "dropped": [],
+      "model": null
+    }
+  ]
+}
