@@ -110,6 +110,7 @@ def deterministic_summary(chapter: Chapter, lang: str = "en", evidence: Evidence
     rationale = kind_rationale(kind, lang)
     top = _top_files(chapter, 1)
     top_path, top_add, top_del = (top[0] if top else ("", 0, 0))
+    cite_path = top_path or (chapter.paths[0] if chapter.paths else "")
     first_subject = _scrub(first.subject, evidence)
     last_subject = _scrub(last.subject, evidence)
     issues_note = _issues_note(chapter, lang)
@@ -117,8 +118,8 @@ def deterministic_summary(chapter: Chapter, lang: str = "en", evidence: Evidence
     if lang == "ja":
         s1 = (
             "第%d章は%sから%sまでの%dコミットで%dファイル（+%d/-%d）を変更し、"
-            "中心にある意図は%s、つまり%sです（起点は %s）。"
-            % (chapter.index, _date(chapter.start), _date(chapter.end), n, k, added, deleted, label, rationale, first.short)
+            "中心にある意図は%s、つまり%sです（起点は %s、最も大きく動いたのは %s）。"
+            % (chapter.index, _date(chapter.start), _date(chapter.end), n, k, added, deleted, label, rationale, first.short, cite_path)
         )
         if n == 1:
             s2 = (
@@ -133,7 +134,7 @@ def deterministic_summary(chapter: Chapter, lang: str = "en", evidence: Evidence
     else:
         s1 = (
             "Chapter %d gathers %s between %s and %s that touched %s (+%d/-%d), "
-            "and its dominant intent is %s: %s (starting at %s)."
+            "and its dominant intent is %s: %s (starting at %s, heaviest edit in %s)."
             % (
                 chapter.index,
                 _count(n, "commit", "commits"),
@@ -145,6 +146,7 @@ def deterministic_summary(chapter: Chapter, lang: str = "en", evidence: Evidence
                 label,
                 rationale,
                 first.short,
+                cite_path,
             )
         )
         if n == 1:

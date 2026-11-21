@@ -180,6 +180,13 @@ class Chapter:
         scope = self.scope
         if scope:
             return f"{self.kind}({scope})"
+        if self.kind == "other" and self.commits:
+            head = self.commits[0].subject.strip()
+            if len(head) > 84:
+                head = head[:81].rstrip() + "..."
+            if len(self.commits) > 1:
+                head = f"{head} +{len(self.commits) - 1}"
+            return head
         paths = self.paths
         if paths:
             top = sorted(

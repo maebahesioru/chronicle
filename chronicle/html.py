@@ -301,7 +301,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chronicle &mdash; __TITLE__</title>
+<title>Chronicle &mdash; hear why your code exists</title>
 <style>
 :root{--ink:#12100e;--paper:#1b1714;--paper2:#241f1a;--line:#3a322a;--text:#efe6d8;
 --dim:#b3a693;--gold:#d9a441;--green:#79c07a;--red:#e07a6a;--blue:#7fa9d9}
