@@ -6,3 +6,4 @@ chronicle-out/
 *.mp3
 *.wav
 !demo/audio/*.mp3
+*.egg-info/
